@@ -73,12 +73,13 @@
                         .Where(match => match.GameOverTime != DateTime.MinValue);
 
                 var playedMatches = matches as List<Match> ?? matches.ToList();
+                var latestMatch = playedMatches.Count() == 0 ? new Match() : playedMatches.Last();
                 var player = playerCollection.FindOne(Query.EQ("_id", BsonObjectId.Parse(playerId)));
                 var stats = new PlayerStatsViewModel
                 {
                     Player = player,
                     PlayedMatches = playedMatches.OrderByDescending(x => x.GameOverTime),
-                    LatestMatch = playedMatches.Last()
+                    LatestMatch = latestMatch
                 };
 
                 if (playedMatches.Count == 0)

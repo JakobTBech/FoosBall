@@ -22,13 +22,13 @@
         
         public Player BluePlayer2 { get; set; }
 
-        public string PlayersHash
-        {
-            get
-            {
-                return string.Concat(RedPlayer1.Id, RedPlayer2.Id, BluePlayer1.Id, BluePlayer2.Id);
-            }
-        }
+        //public string PlayersHash
+        //{
+        //    get
+        //    {
+        //        return string.Concat(RedPlayer1.Id, RedPlayer2.Id, BluePlayer1.Id, BluePlayer2.Id);
+        //    }
+        //}
         
         public DateTime CreationTime { get; set; }
         
